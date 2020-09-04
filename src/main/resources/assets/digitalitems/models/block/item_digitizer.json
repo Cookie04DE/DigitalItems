@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "digitalitems:block/item_digitizer_bottom",
+    "up": "digitalitems:block/item_digitizer_top",
+    "north": "digitalitems:block/item_digitizer_front_off",
+    "south": "digitalitems:block/item_digitizer_side",
+    "east": "digitalitems:block/item_digitizer_side",
+    "west": "digitalitems:block/item_digitizer_side",
+    "particle": "digitalitems:block/item_digitizer_side"
+  }
+}

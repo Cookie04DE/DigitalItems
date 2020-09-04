@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[33,)"
+license="All rights reserved"
+[[mods]]
+    modId="digitalitems"
+    version="${file.jarVersion}"
+    displayName="Digital Items"
+    authors="Cookie04"
+    description='''
+    A mod to digitalize items.
+    '''
+    credits="Thanks for the invaluable help from the people on the Forge Project discord: https://discord.com/invite/UvedJ9m"
+
+    [[dependencies.digitalitems]]
+        modId="forge"
+        mandatory=true
+        versionRange="[33,)"
+        ordering="NONE"
+        side="BOTH"
+    [[dependencies.digitalitems]]
+        modId="minecraft"
+        mandatory=true
+        versionRange="[1.16.2]"
+        ordering="NONE"
+        side="BOTH"
+    [[dependencies.digitalitems]]
+        modId="computercraft"
+        mandatory=true
+        versionRange="[1.91.0]"
+        ordering="BEFORE"
+        side="BOTH"
