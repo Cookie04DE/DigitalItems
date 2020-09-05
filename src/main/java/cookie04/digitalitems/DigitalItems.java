@@ -3,6 +3,7 @@ package cookie04.digitalitems;
 import cookie04.digitalitems.client.SetupClient;
 import cookie04.digitalitems.common.NBTSaver;
 import dan200.computercraft.api.ComputerCraftAPI;
+import dan200.computercraft.api.lua.LuaException;
 import dan200.computercraft.api.peripheral.IPeripheral;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
@@ -74,5 +75,12 @@ public class DigitalItems {
         data.put("items", items);
         saver.data = data;
         saver.markDirty();
+    }
+
+    public static int doubleWholeCheck(double d, String errorMsg) throws LuaException {
+        if(Math.floor(d) == d) {
+            return (int)d;
+        }
+        throw new LuaException(errorMsg);
     }
 }
