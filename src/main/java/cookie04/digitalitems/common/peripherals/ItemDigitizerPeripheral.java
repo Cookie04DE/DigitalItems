@@ -73,7 +73,10 @@ public class ItemDigitizerPeripheral implements IPeripheral {
                 energy.extractEnergy(digitizeCost, false);
             }
         }
-        int random = DigitalItems.random.nextInt();
+        int random;
+        do {
+            random = DigitalItems.random.nextInt();
+        } while(!DigitalItems.digital_items.containsKey(random));
         DigitalItems.digital_items.put(random, itemStack.serializeNBT());
         handler.extractItem(0, itemStack.getCount(), false);
         return random;
