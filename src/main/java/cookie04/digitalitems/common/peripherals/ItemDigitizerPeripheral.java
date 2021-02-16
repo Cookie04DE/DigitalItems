@@ -60,12 +60,13 @@ public class ItemDigitizerPeripheral implements IPeripheral {
      * @throws LuaException If theres no item in the digitizer or there's not enough power
      */
     @LuaFunction
-    public final double digitize() throws LuaException{
+    public final double digitize() throws LuaException {
         updateInfo();
         if(itemStack.isEmpty()) {
             throw new LuaException("No item to digitize");
         }
         if(powerEnabled) {
+            System.out.println("Power enabled");
             int digitizeCost = Config.ITEM_DIGITIZER_DIGITIZE_COST.get();
             if(energy.extractEnergy(digitizeCost, true) != digitizeCost) {
                 throw new LuaException("Not enough energy to digitize, requires at least: " + digitizeCost);
@@ -76,7 +77,7 @@ public class ItemDigitizerPeripheral implements IPeripheral {
         int random;
         do {
             random = DigitalItems.random.nextInt();
-        } while(!DigitalItems.digital_items.containsKey(random));
+        } while(DigitalItems.digital_items.containsKey(random));
         DigitalItems.digital_items.put(random, itemStack.serializeNBT());
         handler.extractItem(0, itemStack.getCount(), false);
         return random;
