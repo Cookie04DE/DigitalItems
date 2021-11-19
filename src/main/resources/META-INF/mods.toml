@@ -26,6 +26,6 @@ license="All rights reserved"
     [[dependencies.digitalitems]]
         modId="computercraft"
         mandatory=true
-        versionRange="[1.97.0]"
+        versionRange="[1.91,)"
         ordering="BEFORE"
         side="BOTH"
